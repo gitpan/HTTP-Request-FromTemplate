@@ -1,0 +1,9 @@
+inc/MyTestFramework.pm
+lib/HTTP/Request/FromTemplate.pm
+Makefile.PL
+MANIFEST			This list of files
+MANIFEST.skip
+t/http_request_fromtemplate_01_api.t
+t/http_request_fromtemplate_02_basic.t
+t/http_request_fromtemplate_03_content_length.t
+META.yml                                 Module meta-data (added by MakeMaker)
