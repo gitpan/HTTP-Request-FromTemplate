@@ -49,28 +49,4 @@ Content-Type: application/x-www-form-urlencoded
 Keep-Alive: 300
 
 node_id=3628&op=message&message=Hello%20World&message_send=talk
-=== TODO: Out-of-order headers retain template order
---- template
-POST http://[% host %][% path %][% query %] HTTP/1.1
-Connection: keep-alive
-Keep-Alive: 300
-Host: perlmonks.org
-Content-Length: [% content_length %]
-
-node_id=3628&op=message&message=[% message %]&message_send=talk
---- data eval
-{
-  'host' => 'perlmonks.org',
-  'path' => '/',
-  'query' => '?',
-  message => 'Hello%20World',
-}
---- expected
-POST http://perlmonks.org/? HTTP/1.1
-Connection: keep-alive
-Keep-Alive: 300
-Host: perlmonks.org
-Content-Length: 64
-
-node_id=3628&op=message&message=[% message %]&message_send=talk
 

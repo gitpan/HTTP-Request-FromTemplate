@@ -7,6 +7,7 @@ WriteMakefile(
     'PREREQ_PM'    => { 'HTTP::Request' => 0,
                         'HTTP::Message' => 0,
                         'Template' => 0,
+                        'Class::Accessor' => 0,
                         'Test::Base' => 0, # I know. Just for the tests ...
                       }, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?    ## Add these new keywords supported since 5.005

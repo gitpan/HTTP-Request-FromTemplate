@@ -6,7 +6,7 @@ use base 'Class::Accessor';
 
 use vars qw($VERSION);
 
-$VERSION = '0.01';
+$VERSION = '0.03';
 
 =head1 NAME
 

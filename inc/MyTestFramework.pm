@@ -19,9 +19,9 @@ sub template_identity {
         until m!\n\n$!m;
     };
   };
-  
+
   my $h = HTTP::Request::FromTemplate->new(template => \$template);
-  
+
   # A bug in Test::Base - it eats all empty lines at
   # the end of every block.
   if ($expected !~ m!\n\n!m) { # Header without a body
@@ -31,10 +31,12 @@ sub template_identity {
 
   my $req = $h->process($block->data);
   my $result = $req->as_string;
-  
+
   if ($block->name =~ /^TODO: (.*)/) {
-    local $TODO = $1;
-    is $result, $expected, $block->name;
+    TODO: {
+      local $TODO = $1;
+      is $result, $expected, $block->name;
+    };
   } else {
     is $result, $expected, $block->name;
   };
